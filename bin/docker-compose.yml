@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  openresty:
+    image: openresty/openresty:1.25.3.1-alpine
+    container_name: openresty
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /opt/openresty/nginx/conf/conf.d:/usr/local/openresty/nginx/conf/conf.d
+      - /opt/openresty/nginx/conf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      - /opt/openresty/lua-scripts:/usr/local/openresty/lua-scripts
+      - /opt/openresty/nginx/logs:/usr/local/openresty/nginx/logs
+    networks:
+      openresty_network:
+
+networks:
+  openresty_network:
