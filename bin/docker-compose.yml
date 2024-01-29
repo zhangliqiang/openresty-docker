@@ -13,6 +13,7 @@ services:
       - /opt/openresty/nginx/conf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
       - /opt/openresty/lua-scripts:/usr/local/openresty/lua-scripts
       - /opt/openresty/nginx/logs:/usr/local/openresty/nginx/logs
+      - /opt/fit2cloud/ssl/:/opt/fit2cloud/ssl/
     networks:
       openresty_network:
 

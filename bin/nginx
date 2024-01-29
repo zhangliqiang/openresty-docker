@@ -1,0 +1,7 @@
+#!/bin/bash
+all=$*
+if [ -z "${all}" ]; then
+    echo No Args provided
+    exit 1
+fi
+docker exec -it openresty /usr/local/openresty/nginx/sbin/nginx ${all}
